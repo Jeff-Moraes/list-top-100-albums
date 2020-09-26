@@ -3,6 +3,7 @@ import React from "react";
 import { Container } from "./styles";
 
 export default function AlbumCard({ album }) {
+  console.log(album);
   return (
     <Container>
       <img
@@ -11,7 +12,7 @@ export default function AlbumCard({ album }) {
       />
       <div className="cardInfos">
         <h1>{album["im:name"].label}</h1>
-        <p>{album["im:artist"].label}</p>
+        <p className="artistName">{album["im:artist"].label}</p>
       </div>
     </Container>
   );
