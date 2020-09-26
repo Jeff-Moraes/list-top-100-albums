@@ -3,7 +3,7 @@ import React from "react";
 import { Container } from "./styles";
 
 export default function AlbumCard({ album }) {
-  console.log(album);
+  // console.log(album);
   return (
     <Container>
       <img
