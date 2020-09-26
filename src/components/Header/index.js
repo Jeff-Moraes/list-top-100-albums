@@ -5,7 +5,7 @@ import { HeaderContainer } from "./styles";
 const Header = () => {
   return (
     <HeaderContainer>
-      <h1>TOP 100 SONGS</h1>
+      <h1>Top 100 albums</h1>
     </HeaderContainer>
   );
 };
