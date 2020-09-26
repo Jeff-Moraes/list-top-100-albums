@@ -8,26 +8,26 @@ In a fictional world, Dampsoft is branching into the music business and we need 
 
 ### Tasks
 
--   Implement assignment using:
-    -   Language: **JavaScript**
-    -   Framework: **React**
--   Show top 100 albums based on the json feed here: `https://itunes.apple.com/us/rss/topalbums/limit=100/json`
--   Cross browser support (or graceful degradation)
--   A clean modern look and responsive design
--   A good user experience
--   Use a CSS Framework (Bootstrap, Foundation, Pure, etc.…)
--   Allow the top 100 to be searchable
--   Surprise us! Add a feature that you think would work well here (for instance, advanced search, integration with other API, a "Favorite" functionality)
-    -   Describe the feature in separate markdown file
+- Implement assignment using:
+  - Language: **JavaScript**
+  - Framework: **React**
+- Show top 100 albums based on the json feed here: `https://itunes.apple.com/us/rss/topalbums/limit=100/json`
+- Cross browser support (or graceful degradation)
+- A clean modern look and responsive design
+- A good user experience
+- Use a CSS Framework (Bootstrap, Foundation, Pure, etc.…)
+- Allow the top 100 to be searchable
+- Surprise us! Add a feature that you think would work well here (for instance, advanced search, integration with other API, a "Favorite" functionality)
+  - Describe the feature in separate markdown file
 
 ### Evaluation Criteria
 
--   **JavaScript** best practices
--   Show us your work through your commit history
--   Completeness: did you complete the features?
--   Correctness: does the functionality act in sensible, thought-out ways?
--   Maintainability: is it written in a clean, maintainable way?
--   Testing: is the system adequately tested?
+- **JavaScript** best practices
+- Show us your work through your commit history
+- Completeness: did you complete the features?
+- Correctness: does the functionality act in sensible, thought-out ways?
+- Maintainability: is it written in a clean, maintainable way?
+- Testing: is the system adequately tested?
 
 ### CodeSubmit
 
