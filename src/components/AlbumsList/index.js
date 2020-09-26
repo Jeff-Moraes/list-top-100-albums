@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 import AlbumCard from "../AlbumCard";
+import SearchAlbum from "../SearchAlbum";
 
 export default function AlbumsList() {
   const [albums, setAlbums] = useState([]);
@@ -19,6 +20,7 @@ export default function AlbumsList() {
 
   return (
     <div>
+      <SearchAlbum />
       {albums.map((album) => (
         <AlbumCard album={album} key={album.id.attributes["im:id"]} />
       ))}
