@@ -36,6 +36,7 @@ export default function AlbumsList() {
   const handleSubmitForm = (event) => {
     event.preventDefault();
     let filteredAlbumsArr = albums.filter((album) => {
+      album.showDetails = false;
       if (selectedCategory !== "all") {
         return (
           album["im:name"].label.toLowerCase().includes(albumNameFromInput) &&
@@ -49,6 +50,16 @@ export default function AlbumsList() {
     });
     setFilteredAlbums(filteredAlbumsArr);
     setAlbumNameFromInput("");
+  };
+
+  const showAlbumDetails = (albumId) => {
+    let updatedAlbumsArr = albums.map((album) => {
+      if (album.id.attributes["im:id"] === albumId) {
+        album.showDetails = !album.showDetails;
+      }
+      return album;
+    });
+    setFilteredAlbums(updatedAlbumsArr);
   };
 
   useEffect(() => {
@@ -65,7 +76,11 @@ export default function AlbumsList() {
         setSelectedCategory={setSelectedCategory}
       />
       {filteredAlbums.map((album) => (
-        <AlbumCard album={album} key={album.id.attributes["im:id"]} />
+        <AlbumCard
+          album={album}
+          key={album.id.attributes["im:id"]}
+          showAlbumDetails={showAlbumDetails}
+        />
       ))}
     </div>
   );

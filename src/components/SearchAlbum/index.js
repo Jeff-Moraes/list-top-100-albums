@@ -18,19 +18,21 @@ export default function SearchAlbum({
         value={albumNameFromInput}
         onChange={(event) => setAlbumNameFromInput(event.target.value)}
       />
-      <label htmlFor="albumCategory">Search by category</label>
-      <select
-        name="albumCategory"
-        id="albumCategory"
-        onChange={(event) => setSelectedCategory(event.target.value)}
-      >
-        <option value="all">all</option>
-        {albumsCategories.map((category) => (
-          <option key={category} value={category}>
-            {category}
-          </option>
-        ))}
-      </select>
+      <div>
+        <label htmlFor="albumCategory">Search by category</label>
+        <select
+          name="albumCategory"
+          id="albumCategory"
+          onChange={(event) => setSelectedCategory(event.target.value)}
+        >
+          <option value="all">all</option>
+          {albumsCategories.map((category) => (
+            <option key={category} value={category}>
+              {category}
+            </option>
+          ))}
+        </select>
+      </div>
       <button type="submit">search</button>
     </Container>
   );
