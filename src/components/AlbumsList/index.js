@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import AlbumCard from "../AlbumCard";
+
 export default function AlbumsList() {
   const [albums, setAlbums] = useState([]);
 
@@ -8,7 +10,6 @@ export default function AlbumsList() {
     const albumsFromiTunesAPI = await axios.get(
       "https://itunes.apple.com/us/rss/topalbums/limit=100/json"
     );
-    console.log(albumsFromiTunesAPI.data.feed.entry, "albumsFromiTunesAPI");
     setAlbums(albumsFromiTunesAPI.data.feed.entry);
   };
 
@@ -18,7 +19,9 @@ export default function AlbumsList() {
 
   return (
     <div>
-      <h1>AlbumsList</h1>
+      {albums.map((album) => (
+        <AlbumCard album={album} key={album.id.attributes["im:id"]} />
+      ))}
     </div>
   );
 }
