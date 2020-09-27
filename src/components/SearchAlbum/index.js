@@ -5,7 +5,7 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { Container } from "./styles";
 
 export default function SearchAlbum({
-  albumsCategories,
+  albumsCategories = [],
   handleSubmitForm,
   albumNameFromInput,
   setAlbumNameFromInput,
