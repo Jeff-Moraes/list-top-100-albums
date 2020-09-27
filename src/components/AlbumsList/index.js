@@ -55,6 +55,7 @@ export default function AlbumsList() {
   const handleSubmitForm = (event) => {
     event && event.preventDefault();
     filterAlbums();
+    setAlbumNameFromInput("");
   };
 
   const handleFavorite = (albumId) => {
@@ -67,7 +68,7 @@ export default function AlbumsList() {
     setAlbums(updatedAlbumsArr);
   };
 
-  const showFavoritiesOnly = () => {
+  const showFavoritesOnly = () => {
     let onlyFavoriteAlbums = albums.filter((album) => album.isFavorite);
     setFilteredAlbums(onlyFavoriteAlbums);
   };
@@ -94,7 +95,7 @@ export default function AlbumsList() {
         albumNameFromInput={albumNameFromInput}
         setAlbumNameFromInput={setAlbumNameFromInput}
         setSelectedCategory={setSelectedCategory}
-        showFavoritiesOnly={showFavoritiesOnly}
+        showFavoritesOnly={showFavoritesOnly}
       />
       {filteredAlbums.length > 0 ? (
         filteredAlbums.map((album) => (
@@ -107,7 +108,7 @@ export default function AlbumsList() {
         ))
       ) : (
         <NotFoundMessageContainer>
-          <h2>We didn't find any results for {albumNameFromInput}</h2>
+          <h2>We didn't find any results.</h2>
         </NotFoundMessageContainer>
       )}
     </div>

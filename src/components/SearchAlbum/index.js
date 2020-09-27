@@ -10,7 +10,7 @@ export default function SearchAlbum({
   albumNameFromInput,
   setAlbumNameFromInput,
   setSelectedCategory,
-  showFavoritiesOnly,
+  showFavoritesOnly,
 }) {
   return (
     <Container onSubmit={handleSubmitForm}>
@@ -37,9 +37,9 @@ export default function SearchAlbum({
         </select>
       </div>
       <button type="submit">Search</button>
-      <button type="button" onClick={showFavoritiesOnly}>
+      <button type="button" onClick={showFavoritesOnly}>
         <FontAwesomeIcon icon={faHeart} />
-        Favorities
+        Favorites
       </button>
     </Container>
   );
