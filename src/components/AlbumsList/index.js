@@ -67,6 +67,11 @@ export default function AlbumsList() {
     filterAlbums();
   };
 
+  const showFavoritiesOnly = () => {
+    let onlyFavoriteAlbums = albums.filter((album) => album.isFavorite);
+    setFilteredAlbums(onlyFavoriteAlbums);
+  };
+
   const showAlbumDetails = (albumId) => {
     let updatedAlbumsArr = filteredAlbums.map((album) => {
       if (album.id.attributes["im:id"] === albumId) {
@@ -89,6 +94,7 @@ export default function AlbumsList() {
         albumNameFromInput={albumNameFromInput}
         setAlbumNameFromInput={setAlbumNameFromInput}
         setSelectedCategory={setSelectedCategory}
+        showFavoritiesOnly={showFavoritiesOnly}
       />
       {filteredAlbums.map((album) => (
         <AlbumCard

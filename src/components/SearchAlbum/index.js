@@ -1,4 +1,6 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import { Container } from "./styles";
 
@@ -8,6 +10,7 @@ export default function SearchAlbum({
   albumNameFromInput,
   setAlbumNameFromInput,
   setSelectedCategory,
+  showFavoritiesOnly,
 }) {
   return (
     <Container onSubmit={handleSubmitForm}>
@@ -33,7 +36,11 @@ export default function SearchAlbum({
           ))}
         </select>
       </div>
-      <button type="submit">search</button>
+      <button type="submit">Search</button>
+      <button type="button" onClick={showFavoritiesOnly}>
+        <FontAwesomeIcon icon={faHeart} />
+        Favorities
+      </button>
     </Container>
   );
 }
