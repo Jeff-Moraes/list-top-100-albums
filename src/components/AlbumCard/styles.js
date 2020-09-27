@@ -40,6 +40,16 @@ export const Container = styled.div`
 
     .detailsButtonContainer {
       margin: 5px 0;
+
+      svg {
+        cursor: pointer;
+        margin-left: 10px;
+
+        &:hover {
+          font-size: 17px;
+        }
+      }
+
       button {
         color: #555;
         font-size: 12px;

@@ -33,8 +33,7 @@ export default function AlbumsList() {
     setAlbumsCategories(albumsCategories);
   };
 
-  const handleSubmitForm = (event) => {
-    event.preventDefault();
+  const filterAlbums = () => {
     let filteredAlbumsArr = albums.filter((album) => {
       album.showDetails = false;
       if (selectedCategory !== "all") {
@@ -49,7 +48,23 @@ export default function AlbumsList() {
       }
     });
     setFilteredAlbums(filteredAlbumsArr);
+  };
+
+  const handleSubmitForm = (event) => {
+    event && event.preventDefault();
+    filterAlbums();
     setAlbumNameFromInput("");
+  };
+
+  const handleFavorite = (albumId) => {
+    let updatedAlbumsArr = albums.map((album) => {
+      if (album.id.attributes["im:id"] === albumId) {
+        album.isFavorite = !album.isFavorite;
+      }
+      return album;
+    });
+    setAlbums(updatedAlbumsArr);
+    filterAlbums();
   };
 
   const showAlbumDetails = (albumId) => {
@@ -80,6 +95,7 @@ export default function AlbumsList() {
           album={album}
           key={album.id.attributes["im:id"]}
           showAlbumDetails={showAlbumDetails}
+          handleFavorite={handleFavorite}
         />
       ))}
     </div>

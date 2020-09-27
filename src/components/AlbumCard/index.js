@@ -1,8 +1,10 @@
 import React from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
 
 import { Container } from "./styles";
 
-export default function AlbumCard({ album, showAlbumDetails }) {
+export default function AlbumCard({ album, showAlbumDetails, handleFavorite }) {
   return (
     <Container>
       <img
@@ -20,6 +22,12 @@ export default function AlbumCard({ album, showAlbumDetails }) {
           >
             {album.showDetails ? "hide details" : "show details"}
           </button>
+          <FontAwesomeIcon
+            className="HeartIcon"
+            icon={faHeart}
+            color={album.isFavorite ? "#e8505b" : "#ffdecf"}
+            onClick={() => handleFavorite(album.id.attributes["im:id"])}
+          />
         </div>
 
         {album.showDetails && (
