@@ -64,7 +64,6 @@ export default function AlbumsList() {
       return album;
     });
     setAlbums(updatedAlbumsArr);
-    filterAlbums();
   };
 
   const showFavoritiesOnly = () => {
