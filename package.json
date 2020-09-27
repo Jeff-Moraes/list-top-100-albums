@@ -21,6 +21,11 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/components/**/index.js"
+    ]
+  },
   "eslintConfig": {
     "extends": "react-app"
   },
