@@ -20,30 +20,48 @@ export const Container = styled.div`
 
   .cardInfos {
     margin: 16px 0;
+    display: flex;
+    flex-direction: column;
 
     h1 {
       color: #555;
       font-weight: 500;
       font-size: 24px;
       font-family: Montserrat, sans-serif;
-      margin: 20px 0 5px;
+      margin-top: 20px;
     }
 
     .artistName {
-      color: #fbaf01;
+      color: #555;
       font-weight: 400;
       font-size: 14px;
       font-family: Source Sans Pro, sans-serif;
     }
 
-    .spanContainer {
-      margin: 10px 0;
+    .detailsButtonContainer {
+      margin: 5px 0;
+      button {
+        color: #555;
+        font-size: 12px;
+        padding: 4px 8px;
+        border: 1px solid #fbaf01;
+        border-radius: 4px;
+        background-color: #fff;
+      }
+    }
+
+    .detailsContainer {
+      margin: 5px 0;
+      color: #777;
 
       p {
-        color: #555;
         font-weight: 400;
         font-size: 14px;
         font-family: Source Sans Pro, sans-serif;
+
+        & + p {
+          margin-top: 3px;
+        }
       }
     }
   }

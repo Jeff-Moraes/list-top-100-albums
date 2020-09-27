@@ -53,7 +53,7 @@ export default function AlbumsList() {
   };
 
   const showAlbumDetails = (albumId) => {
-    let updatedAlbumsArr = albums.map((album) => {
+    let updatedAlbumsArr = filteredAlbums.map((album) => {
       if (album.id.attributes["im:id"] === albumId) {
         album.showDetails = !album.showDetails;
       }
