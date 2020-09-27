@@ -10,7 +10,7 @@ export const Container = styled.form`
   box-shadow: 0px 1px 3px 0px rgba(0, 0, 0, 0.17);
 
   display: grid;
-  grid-template-columns: 2fr 2fr 1fr 1fr;
+  grid-template-columns: 2fr 2fr 1fr 120px;
 
   input {
     background-color: #fff;
@@ -50,7 +50,7 @@ export const Container = styled.form`
   }
 
   button[type="button"] {
-    margin: 0 16px;
+    margin-right: 16px;
     padding: 10px;
     color: #555;
     border: 1px solid #fdbf30;
@@ -66,7 +66,8 @@ export const Container = styled.form`
     }
 
     &:hover {
-      background-color: #ddd;
+      border: 1px solid #ffdecf;
+      background-color: #ffdecf;
       svg {
         color: #e8505b;
       }
@@ -78,6 +79,11 @@ export const Container = styled.form`
 
     div {
       margin: 16px 16px;
+    }
+
+    button[type="button"] {
+      margin-top: 10px;
+      margin-left: 16px;
     }
   }
 `;
