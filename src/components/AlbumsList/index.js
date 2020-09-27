@@ -4,6 +4,8 @@ import axios from "axios";
 import AlbumCard from "../AlbumCard";
 import SearchAlbum from "../SearchAlbum";
 
+import { NotFoundMessageContainer } from "./styles";
+
 export default function AlbumsList() {
   const [albums, setAlbums] = useState([]);
   const [filteredAlbums, setFilteredAlbums] = useState(albums);
@@ -53,7 +55,6 @@ export default function AlbumsList() {
   const handleSubmitForm = (event) => {
     event && event.preventDefault();
     filterAlbums();
-    setAlbumNameFromInput("");
   };
 
   const handleFavorite = (albumId) => {
@@ -95,14 +96,20 @@ export default function AlbumsList() {
         setSelectedCategory={setSelectedCategory}
         showFavoritiesOnly={showFavoritiesOnly}
       />
-      {filteredAlbums.map((album) => (
-        <AlbumCard
-          album={album}
-          key={album.id.attributes["im:id"]}
-          showAlbumDetails={showAlbumDetails}
-          handleFavorite={handleFavorite}
-        />
-      ))}
+      {filteredAlbums.length > 0 ? (
+        filteredAlbums.map((album) => (
+          <AlbumCard
+            album={album}
+            key={album.id.attributes["im:id"]}
+            showAlbumDetails={showAlbumDetails}
+            handleFavorite={handleFavorite}
+          />
+        ))
+      ) : (
+        <NotFoundMessageContainer>
+          <h2>We didn't find any results for {albumNameFromInput}</h2>
+        </NotFoundMessageContainer>
+      )}
     </div>
   );
 }
