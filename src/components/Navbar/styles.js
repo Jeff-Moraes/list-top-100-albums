@@ -8,7 +8,4 @@ export const Nav = styled.div`
   height: 60px;
   margin: 0 16px;
 
-  img {
-    width: 180px;
-  }
 `;
